@@ -78,57 +78,153 @@
       transition: background 0.2s;
     }
     .submit-btn:hover { background: #007549; }
+    .submit-btn:disabled { background: #6ee7b7; cursor: not-allowed; }
+
+    /* Done Page Style */
+    .done-card {
+      display: none;
+      background: #fff;
+      border: 1px solid #a7f3d0;
+      border-radius: 12px;
+      padding: 40px 24px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .done-icon {
+      width: 68px;
+      height: 68px;
+      background: #d1fae5;
+      color: #059669;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin: 0 auto 16px;
+    }
+    .done-card h2 { color: #065f46; font-size: 22px; margin-bottom: 8px; }
+    .done-card p { color: #4b5563; font-size: 15px; line-height: 1.6; margin-bottom: 18px; }
+    .summary-box {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .summary-box div { margin: 4px 0; }
+    .back-btn {
+      background: #008f5a;
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 7px;
+      font-size: 15px;
+      cursor: pointer;
+    }
 
     .footer-brand { text-align: center; margin-top: 14px; font-size: 13px; color: #6b7280; }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <!-- Replace YOUR_EMAIL@gmail.com with your email -->
-    <form action="https://formsubmit.co/stormtroik6@gmail.com" method="POST">
-      <!-- FormSubmit settings -->
-      <input type="hidden" name="_subject" value="New bKash Payment Submission!" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
 
-      <div class="card">
-        <div class="card-header">bKash ম্যানুয়াল পেমেন্ট</div>
+    <!-- পেমেন্ট ফর্ম -->
+    <div id="formSection">
+      <form id="paymentForm">
+        <input type="hidden" name="access_key" value="88cf54d1-0d15-4356-8c90-da0ca618bdb5" />
+        <input type="hidden" name="subject" value="New bKash Payment Submission!" />
 
-        <div class="card-body">
-          <div class="number-box">
-            <div class="label">BKASH নাম্বার</div>
-            <div class="number">01996742713</div>
-            <div class="type">(personal)</div>
-          </div>
+        <div class="card">
+          <div class="card-header">bKash ম্যানুয়াল পেমেন্ট</div>
 
-          <div class="info-box">
-            <p>
-              ধাপ: ১. আপনার ফোনের বিকাশ অ্যাপ অথবা ম্যানুয়াল থেকে ওপরে দেয়া নাম্বারে নির্দিষ্ট টাকা সেন্ড মানি করুন।
-              ২. নিচে দেওয়া নির্দিষ্ট স্থানে আপনার সঠিক ট্রানজেকশন নাম্বার এবং প্রেরণকৃত মোবাইল নাম্বার দিয়ে সাবমিট করুন।
-              এডমিন আপনার পেমেন্ট চেক করে আপনার অর্ডার কনফার্ম করবে।
-            </p>
-            <p style="margin-top: 8px;">পেমেন্ট নিয়ে কোনো সমস্যা হলে 01311054291 নাম্বারে কল করে নিশ্চিত হয়ে নিন।</p>
-            <div class="amount">পরিমাণ: <span>৳360</span></div>
-          </div>
+          <div class="card-body">
+            <div class="number-box">
+              <div class="label">BKASH নাম্বার</div>
+              <div class="number">01311054291</div>
+              <div class="type">(personal)</div>
+            </div>
 
-          <div class="form-group">
-            <label for="trxid">TrxID (ট্রানজেকশন আইডি) <span class="req">*</span></label>
-            <input type="text" id="trxid" name="TrxID" placeholder="যেমন: 9H7A6B5C4D" required />
-            <small>bKash পেমেন্ট সম্পন্ন হলে Transaction ID এখানে লিখে সাবমিট করুন।</small>
-          </div>
+            <div class="info-box">
+              <p>
+                ধাপ: ১. আপনার ফোনের বিকাশ অ্যাপ অথবা ম্যানুয়াল থেকে ওপরে দেয়া নাম্বারে নির্দিষ্ট টাকা সেন্ড মানি করুন।
+                ২. নিচে দেওয়া নির্দিষ্ট স্থানে আপনার সঠিক ট্রানজেকশন নাম্বার এবং প্রেরণকৃত মোবাইল নাম্বার দিয়ে সাবমিট করুন।
+                এডমিন আপনার পেমেন্ট চেক করে আপনার অর্ডার কনফার্ম করবে।
+              </p>
+              <p style="margin-top: 8px;">পেমেন্ট নিয়ে কোনো সমস্যা হলে 01311054291 নাম্বারে কল করে নিশ্চিত হয়ে নিন।</p>
+              <div class="amount">পরিমাণ: <span>৳360</span></div>
+            </div>
 
-          <div class="form-group">
-            <label for="sender">যে নাম্বার থেকে পাঠিয়েছেন <span class="req">*</span></label>
-            <input type="tel" id="sender" name="Sender_Number" placeholder="017XXXXXXXX" pattern="01[3-9][0-9]{8}" required />
-            <small>যে নাম্বার থেকে পেমেন্ট করেছেন তা দিন।</small>
+            <div class="form-group">
+              <label for="trxid">TrxID (ট্রানজেকশন আইডি) <span class="req">*</span></label>
+              <input type="text" id="trxid" name="TrxID" placeholder="যেমন: 9H7A6B5C4D" required />
+              <small>bKash পেমেন্ট সম্পন্ন হলে Transaction ID এখানে লিখে সাবমিট করুন।</small>
+            </div>
+
+            <div class="form-group">
+              <label for="sender">যে নাম্বার থেকে পাঠিয়েছেন <span class="req">*</span></label>
+              <input type="tel" id="sender" name="Sender_Number" placeholder="017XXXXXXXX" pattern="01[3-9][0-9]{8}" required />
+              <small>যে নাম্বার থেকে পেমেন্ট করেছেন তা দিন।</small>
+            </div>
           </div>
         </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Transaction ID জমা দিন ও অর্ডার সম্পন্ন করুন</button>
+      </form>
+    </div>
+
+    <!-- Done পেজ -->
+    <div id="doneSection" class="done-card">
+      <div class="done-icon">✓</div>
+      <h2>পেমেন্ট তথ্য জমা হয়েছে!</h2>
+      <p>ধন্যবাদ! আপনার পেমেন্টের তথ্য আমরা পেয়েছি। এডমিন চেক করে খুব শীঘ্রই আপনার অর্ডার কনফার্ম করবেন।</p>
+      <div class="summary-box">
+        <div><strong>TrxID:</strong> <span id="showTrx"></span></div>
+        <div><strong>প্রেরণকৃত নাম্বার:</strong> <span id="showSender"></span></div>
       </div>
+      <button class="back-btn" onclick="location.reload()">নতুন পেমেন্ট করুন</button>
+    </div>
 
-      <button type="submit" class="submit-btn">Transaction ID জমা দিন ও অর্ডার সম্পন্ন করুন</button>
-    </form>
-
-    <div class="footer-brand">Your Store Name</div>
+    <div class="footer-brand">Anatomy Viva Master</div>
   </div>
+
+  <script>
+    const form = document.getElementById('paymentForm');
+    const btn = document.getElementById('submitBtn');
+    const formSection = document.getElementById('formSection');
+    const doneSection = document.getElementById('doneSection');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = 'জমা দেওয়া হচ্ছে...';
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          document.getElementById('showTrx').textContent = document.getElementById('trxid').value;
+          document.getElementById('showSender').textContent = document.getElementById('sender').value;
+          formSection.style.display = 'none';
+          doneSection.style.display = 'block';
+        } else {
+          alert('সমস্যা হয়েছে: ' + data.message);
+          btn.disabled = false;
+          btn.textContent = 'Transaction ID জমা দিন ও অর্ডার সম্পন্ন করুন';
+        }
+      } catch (err) {
+        alert('ইন্টারনেট সংযোগ চেক করে আবার চেষ্টা করুন।');
+        btn.disabled = false;
+        btn.textContent = 'Transaction ID জমা দিন ও অর্ডার সম্পন্ন করুন';
+      }
+    });
+  </script>
 </body>
 </html>
